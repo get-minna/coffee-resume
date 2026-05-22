@@ -1,21 +1,39 @@
-# Next.js template
+# Stewart Huang — Glyph Supply Co Resume
 
-This is a Next.js template with shadcn/ui.
+A monochromatic, Glyph-inspired barista resume built with Next.js. Content lives in [`lib/resume-data.ts`](lib/resume-data.ts); edit that file to update copy, links, and sections.
 
-## Adding components
-
-To add components to your app, run the following command:
+## Development
 
 ```bash
-npx shadcn@latest add button
+pnpm install
+pnpm dev
 ```
 
-This will place the ui components in the `components` directory.
+Open [http://localhost:3000](http://localhost:3000).
 
-## Using components
+## Build
 
-To use the components in your app, import them as follows:
-
-```tsx
-import { Button } from "@/components/ui/button";
+```bash
+pnpm build
+pnpm start
 ```
+
+## Deploy to production (Vercel)
+
+1. Push this repo to GitHub (`get-minna/coffee-resume`).
+2. Go to [vercel.com/new](https://vercel.com/new) and import the repository.
+3. Framework preset: **Next.js** (auto-detected).
+4. Build command: `pnpm build` · Install command: `pnpm install`
+5. Deploy. Vercel assigns a `*.vercel.app` URL; add a custom domain in project settings if needed.
+
+Alternatively, with the [Vercel CLI](https://vercel.com/docs/cli):
+
+```bash
+pnpm add -g vercel   # or: npx vercel
+vercel link
+vercel --prod
+```
+
+## Export PDF
+
+Use **Export PDF** in the page footer for a downloaded PDF, or the browser print dialog (Save as PDF).

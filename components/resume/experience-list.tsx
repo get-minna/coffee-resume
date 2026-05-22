@@ -34,9 +34,16 @@ export function ExperienceList({ experience }: ExperienceListProps) {
               <p className="mb-2.5 font-mono text-[11px] text-resume-muted">
                 {item.company}
               </p>
-              <p className="text-[13px] leading-[1.75] font-light text-resume-muted">
-                {item.description}
-              </p>
+              <div className="space-y-3">
+                {item.description.map((paragraph) => (
+                  <p
+                    key={paragraph.slice(0, 48)}
+                    className="text-[13px] leading-[1.75] font-light text-resume-muted"
+                  >
+                    {paragraph}
+                  </p>
+                ))}
+              </div>
               <div className="mt-2.5 flex flex-wrap gap-1.5">
                 {item.tags.map((tag) => (
                   <span

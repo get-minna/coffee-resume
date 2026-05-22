@@ -4,7 +4,7 @@ import type { Metadata } from "next"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import { cn } from "@/lib/utils"
-import { resumeData } from "@/lib/resume-data"
+import { paragraphToPlainText, resumeData } from "@/lib/resume-data"
 
 const geist = Geist({ subsets: ["latin"], variable: "--font-sans" })
 
@@ -21,7 +21,7 @@ const instrumentSerif = Instrument_Serif({
 
 export const metadata: Metadata = {
   title: "Stewart Huang — Glyph Supply Co",
-  description: resumeData.meta.tagline,
+  description: resumeData.meta.tagline.map(paragraphToPlainText).join(" "),
 }
 
 export default function RootLayout({

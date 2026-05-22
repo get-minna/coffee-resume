@@ -1,4 +1,6 @@
+import { RichParagraph } from "@/components/resume/rich-paragraph"
 import type { ResumeData } from "@/lib/resume-data"
+import { paragraphToPlainText } from "@/lib/resume-data"
 
 interface ResumeHeaderProps {
   meta: ResumeData["meta"]
@@ -11,13 +13,19 @@ export function ResumeHeader({ meta }: ResumeHeaderProps) {
         <p className="mb-3 font-mono text-[11px] tracking-[0.15em] text-resume-ink uppercase">
           {meta.roleTag}
         </p>
-        <h1 className="font-display text-[36px] leading-[1.05] tracking-[-0.01em] text-resume-ink sm:text-[52px]">
+        <h1 className="font-mono text-[36px] font-light leading-[1.05] tracking-[-0.01em] text-resume-ink sm:text-[52px]">
           {meta.firstName}{" "}
-          <em className="text-resume-muted italic">{meta.lastName}</em>
+          <span className="text-resume-muted">{meta.lastName}</span>
         </h1>
-        <p className="mt-3.5 max-w-[440px] text-sm leading-[1.7] font-light text-resume-muted">
-          {meta.tagline}
-        </p>
+        <div className="mt-3.5 max-w-[440px] space-y-2">
+          {meta.tagline.map((paragraph) => (
+            <RichParagraph
+              key={paragraphToPlainText(paragraph)}
+              paragraph={paragraph}
+              className="text-sm leading-[1.7] font-light text-resume-muted"
+            />
+          ))}
+        </div>
       </div>
       <div className="font-mono text-[11px] leading-[2.1] text-resume-muted sm:text-right">
         <div>{meta.location}</div>

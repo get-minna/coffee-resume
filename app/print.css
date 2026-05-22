@@ -1,0 +1,38 @@
+@media print {
+  .resume-grain {
+    display: none !important;
+  }
+
+  .export-hide {
+    display: none !important;
+  }
+
+  body {
+    background: white !important;
+    color: black !important;
+  }
+
+  .resume-page {
+    max-width: none !important;
+    padding: 0 !important;
+  }
+
+  .skill-card {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .exp-item {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+
+  a {
+    color: inherit !important;
+    text-decoration: none !important;
+  }
+}

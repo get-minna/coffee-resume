@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stewart Huang — Glyph Coffee</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --espresso: #1a0f0a;
+    --roast: #2e1a0e;
+    --mahogany: #4a2c1a;
+    --caramel: #b07540;
+    --cream: #f0e8d8;
+    --parchment: #e8dcc8;
+    --muted: #9a8878;
+    --accent: #c8945a;
+  }
+  body {
+    background: var(--espresso);
+    color: var(--cream);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    min-height: 100vh;
+  }
+  .grain {
+    position: fixed; inset: 0; opacity: 0.04; pointer-events: none; z-index: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-size: 200px;
+  }
+  .page {
+    position: relative; z-index: 1;
+    max-width: 820px; margin: 0 auto; padding: 60px 48px 80px;
+  }
+  .header {
+    border-bottom: 0.5px solid var(--mahogany);
+    padding-bottom: 40px; margin-bottom: 44px;
+    display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: end;
+  }
+  .role-tag {
+    font-family: 'DM Mono', monospace; font-size: 11px; font-weight: 400;
+    color: var(--accent); letter-spacing: 0.15em; text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .name {
+    font-family: 'Playfair Display', serif; font-size: 52px; font-weight: 400;
+    color: var(--cream); line-height: 1.05; letter-spacing: -0.01em;
+  }
+  .name em { font-style: italic; color: var(--accent); }
+  .tagline {
+    margin-top: 14px; font-size: 14px; color: var(--muted);
+    font-weight: 300; line-height: 1.7; max-width: 440px;
+  }
+  .contact-block {
+    text-align: right; font-family: 'DM Mono', monospace;
+    font-size: 11px; color: var(--muted); line-height: 2.1;
+  }
+  .contact-block a { color: var(--accent); text-decoration: none; }
+  .section {
+    margin-bottom: 44px; opacity: 0; transform: translateY(16px);
+    animation: fadeUp 0.5s ease forwards;
+  }
+  .s1{animation-delay:0.1s} .s2{animation-delay:0.2s} .s3{animation-delay:0.25s}
+  .s4{animation-delay:0.3s} .s5{animation-delay:0.35s} .s6{animation-delay:0.4s}
+  @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
+  .section-label {
+    font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--caramel); margin-bottom: 18px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .section-label::after { content: ''; flex: 1; height: 0.5px; background: var(--mahogany); }
+  .profile-text {
+    font-size: 15px; line-height: 1.85; color: var(--parchment); font-weight: 300;
+    border-left: 2px solid var(--caramel); padding-left: 20px;
+  }
+  .skills-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;
+  }
+  .skill-card {
+    background: var(--roast); border: 0.5px solid var(--mahogany);
+    border-radius: 8px; padding: 16px 18px; transition: border-color 0.2s;
+  }
+  .skill-card:hover { border-color: var(--caramel); }
+  .skill-card-title {
+    font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--accent); margin-bottom: 8px;
+  }
+  .skill-card-body { font-size: 13px; color: var(--muted); line-height: 1.65; font-weight: 300; }
+  .exp-item {
+    display: grid; grid-template-columns: 140px 1fr; gap: 24px;
+    margin-bottom: 30px; padding-bottom: 30px;
+    border-bottom: 0.5px solid var(--roast);
+  }
+  .exp-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+  .exp-date { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--caramel); margin-bottom: 4px; }
+  .exp-type { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; }
+  .exp-title { font-family: 'Playfair Display', serif; font-size: 17px; color: var(--cream); margin-bottom: 4px; font-weight: 400; }
+  .exp-company { font-size: 11px; color: var(--accent); font-family: 'DM Mono', monospace; margin-bottom: 10px; }
+  .exp-desc { font-size: 13px; color: var(--muted); line-height: 1.75; font-weight: 300; }
+  .highlights { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+  .tag {
+    font-family: 'DM Mono', monospace; font-size: 10px; color: var(--caramel);
+    background: rgba(200,148,90,0.08); border: 0.5px solid rgba(200,148,90,0.25);
+    border-radius: 4px; padding: 3px 8px;
+  }
+  .community-row { display: flex; gap: 10px; flex-wrap: wrap; }
+  .community-pill {
+    background: var(--roast); border: 0.5px solid var(--mahogany);
+    border-radius: 20px; padding: 8px 16px;
+    font-family: 'DM Mono', monospace; font-size: 11px; color: var(--muted);
+  }
+  .community-pill strong { color: var(--cream); font-weight: 500; }
+  .footer-note {
+    margin-top: 40px; padding-top: 24px; border-top: 0.5px solid var(--mahogany);
+    font-family: 'DM Mono', monospace; font-size: 11px; color: var(--muted);
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  @media (max-width: 600px) {
+    .page { padding: 32px 20px 48px; }
+    .header { grid-template-columns: 1fr; }
+    .contact-block { text-align: left; }
+    .name { font-size: 36px; }
+    .skills-grid { grid-template-columns: 1fr 1fr; }
+    .exp-item { grid-template-columns: 1fr; gap: 4px; }
+  }
+</style>
+</head>
+<body>
+<div class="grain"></div>
+<div class="page">
+
+  <div class="header section s1">
+    <div>
+      <div class="role-tag">Application · Front of House · Glyph Coffee</div>
+      <div class="name">Stewart <em>Huang</em></div>
+      <div class="tagline">Product builder who shipped at national scale — now applying that same obsessive attention to craft coffee, from lever machine to Ikawa roaster.</div>
+    </div>
+    <div class="contact-block">
+      <div>Singapore</div>
+      <div><a href="#">stewart@email.com</a></div>
+      <div><a href="#">+65 XXXX XXXX</a></div>
+      <div><a href="#">linkedin / portfolio</a></div>
+    </div>
+  </div>
+
+  <div class="section s2">
+    <div class="section-label">Profile</div>
+    <p class="profile-text">
+      I spent 13 years building and shipping digital products — including SafeEntry, Singapore's national check-in system that handled 3–4 million daily check-ins and helped businesses like cafes reopen safely during the pandemic. That work taught me how to move fast, stay precise under pressure, and care deeply about the people on the other side of a product. During Covid, I discovered coffee — seriously. What started with a Breville became a lever machine, an Ikawa roaster, sourcing my own greens, and collecting manual brew devices out of genuine curiosity about how and why each one extracts differently. I apply to Glyph because I want to pursue this craft properly, and because the standard here is one worth reaching for.
+    </p>
+  </div>
+
+  <div class="section s3">
+    <div class="section-label">Coffee Knowledge & Practice</div>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <div class="skill-card-title">Espresso</div>
+        <div class="skill-card-body">Breville → dedicated espresso machine → La Pavoni lever. Daily practice dialling in dose, yield, pressure, and taste. Understands the variables, not just the recipe.</div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-card-title">Manual Brew</div>
+        <div class="skill-card-body">Aeropress, Orea V4 with Negotiator, Hario Switch, UFO Brewer. Always curious about what makes each device different — and how to push it further.</div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-card-title">Home Roasting</div>
+        <div class="skill-card-body">Roasting on Ikawa. Sources green beans, experiments with profiles, tracks development time. Understands roast as a language, not just a process.</div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-card-title">Trade Fluency</div>
+        <div class="skill-card-body">Comfortable holding informed conversations on origin, processing, roast and brew with roasters, cafe owners, and serious enthusiasts — built through years of active practice.</div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-card-title">Industry Context</div>
+        <div class="skill-card-body">Follows Singapore and global specialty coffee closely — including Korean roastery culture, equipment design trends, and how great cafes build their identity.</div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-card-title">Cafe Operations</div>
+        <div class="skill-card-body">Built software for cafe operators. Understands the customer journey, loyalty, retention, and the real pressures of running an independent specialty cafe.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section s4">
+    <div class="section-label">Experience</div>
+
+    <div class="exp-item">
+      <div>
+        <div class="exp-date">2024 – Present</div>
+        <div class="exp-type">Founder</div>
+      </div>
+      <div>
+        <div class="exp-title">Co-Founder & Product Lead</div>
+        <div class="exp-company">Cafe Loyalty Software Startup · Singapore</div>
+        <div class="exp-desc">Building mobile-native loyalty and CRM software for independent cafes and F&B businesses. First product is a digital loyalty card that lives on the customer's phone — no app download required. Secured pre-orders and a signed pilot with a Singapore cafe within the first 6 months. Deep firsthand understanding of what cafe operators need, how customers behave, and what keeps people coming back.</div>
+        <div class="highlights">
+          <span class="tag">Pilot signed</span>
+          <span class="tag">Pre-orders secured</span>
+          <span class="tag">Built for cafes</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div>
+        <div class="exp-date">2023 – Present</div>
+        <div class="exp-type">Consulting</div>
+      </div>
+      <div>
+        <div class="exp-title">Instagram Strategy & Marketing</div>
+        <div class="exp-company">Jay · UFO Brewer — Leading Korean Roastery Cafe</div>
+        <div class="exp-desc">Content strategy and growth work for two prominent names in specialty coffee — Jay, creator of the UFO Brewer, and a notable Korean roastery cafe. Embedded in how the global specialty community communicates, builds audience, and earns credibility.</div>
+        <div class="highlights">
+          <span class="tag">Specialty coffee world</span>
+          <span class="tag">Trade relationships</span>
+          <span class="tag">Global scene</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div>
+        <div class="exp-date">2020 – 2024</div>
+        <div class="exp-type">Product · Gov Tech</div>
+      </div>
+      <div>
+        <div class="exp-title">Product Engineer · National Digital Infrastructure</div>
+        <div class="exp-company">SafeEntry & SingaporeRewards · Singapore Government</div>
+        <div class="exp-desc">Led product design and engineering on SafeEntry — Singapore's national check-in system, processing 3–4 million daily check-ins and helping businesses including cafes reopen safely during the pandemic. Also designed and built e-commerce and loyalty experiences for SingaporeRewards with the Singapore Tourism Board as part of the post-pandemic travel recovery programme.</div>
+        <div class="highlights">
+          <span class="tag">3–4M daily check-ins</span>
+          <span class="tag">National scale</span>
+          <span class="tag">Loyalty & e-commerce</span>
+          <span class="tag">Award-winning</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div>
+        <div class="exp-date">2011 – 2020</div>
+        <div class="exp-type">Regional · Product</div>
+      </div>
+      <div>
+        <div class="exp-title">Product & Engineering · Regional Roles</div>
+        <div class="exp-company">Singapore · Jakarta · Bangkok · Kuala Lumpur · Amsterdam</div>
+        <div class="exp-desc">Nine years across e-commerce, lifestyle banking, and consumer product builds spanning Southeast Asia and Europe. Worked extensively on-the-ground in Jakarta, Bangkok, and Kuala Lumpur, with regular project involvement in Amsterdam. Built a foundation in shipping products across diverse cultures, fast-paced environments, and high expectations.</div>
+        <div class="highlights">
+          <span class="tag">SE Asia</span>
+          <span class="tag">Amsterdam</span>
+          <span class="tag">E-commerce</span>
+          <span class="tag">Consumer products</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="section s5">
+    <div class="section-label">In the Coffee World</div>
+    <div class="community-row">
+      <div class="community-pill"><strong>Jay</strong> · UFO Brewer creator</div>
+      <div class="community-pill"><strong>Korean roastery</strong> · Marketing partner</div>
+      <div class="community-pill"><strong>Ikawa</strong> · Home roaster</div>
+      <div class="community-pill"><strong>La Pavoni</strong> · Lever espresso</div>
+      <div class="community-pill"><strong>Orea V4</strong> + Negotiator</div>
+      <div class="community-pill"><strong>Hario Switch</strong></div>
+      <div class="community-pill"><strong>UFO Brewer</strong></div>
+      <div class="community-pill"><strong>SG specialty scene</strong></div>
+    </div>
+  </div>
+
+  <div class="footer-note section s6">
+    <span>Front of House Application · Glyph Coffee · Singapore</span>
+    <span>Stewart Huang · 2025</span>
+  </div>
+
+</div>
+</body>
+</html>

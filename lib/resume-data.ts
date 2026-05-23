@@ -96,7 +96,7 @@ export const resumeData: ResumeData = {
   skills: [
     {
       title: "Espresso",
-      body: "Breville Infuser → Decent DE1 XL → Meticulous Home → Olympia Cremina Lever machine. Practice dialling in dose, pressure pressure, and blind tasting. Understands the variables, not just the recipe.",
+      body: "Breville Infuser → Decent DE1 XL → Meticulous Home → Olympia Cremina Lever machine. Practice dialling in dose, brewing with pressure profiling, flow profiling, and blind tasting. Understands the variables, not just the recipe.",
     },
     {
       title: "Manual Brew",
@@ -108,7 +108,7 @@ export const resumeData: ResumeData = {
     },
     {
       title: "Trade Fluency",
-      body: "Comfortable holding informed conversations on origin, processing, roast and brew with roasters, cafe owners, and serious enthusiasts — built through years of active practice and trade shows.",
+      body: "Comfortable holding informed conversations on origin, processing, roast and brew with roasters, cafe owners, and serious coffee enthusiasts — built through years of active obsession and practice at trade shows.",
     },
     {
       title: "Industry Context",
@@ -150,7 +150,7 @@ export const resumeData: ResumeData = {
       company: "SafeEntry & SingaporeRewards (Singapore Tourism Board) · Singapore Government",
       description: [
         "Led product design and engineering on SafeEntry — Singapore's national check-in system, processing 3–4 million daily check-ins and helping businesses including cafes reopen safely during the pandemic.",
-        "Also designed and built e-commerce and loyalty experiences for SingaporeRewards with the Singapore Tourism Board as part of the post-pandemic travel recovery programme.",
+        "Also designed and built e-commerce and loyalty experiences for SingaporeRewards in collaboration with the Singapore Tourism Board as part of the post-pandemic travel recovery programme.",
       ],
       tags: [
         "3–4M daily check-ins",

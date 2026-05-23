@@ -2,6 +2,7 @@ import { Geist, Geist_Mono, Instrument_Serif } from "next/font/google"
 import type { Metadata } from "next"
 
 import "./globals.css"
+import "./print.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import { cn } from "@/lib/utils"
 import { paragraphToPlainText, resumeData } from "@/lib/resume-data"

@@ -89,7 +89,7 @@ export const resumeData: ResumeData = {
     ],
   },
   profile: [
-    "I spent 13 years designing, building and shipping award-winning digital products — including SafeEntry, Singapore's national check-in system that handled 3–4 million daily check-ins and helped businesses like Glyph Coffee reopen safely during the pandemic. That work taught me how to move fast, stay precise under pressure, and care deeply about the people on the other side of a product.",
+    "I spent 12 years designing, building and shipping award-winning digital products — including SafeEntry, Singapore's national check-in system that handled 3–4 million daily check-ins and helped businesses like Glyph Coffee reopen safely during the pandemic. That work taught me how to move fast, stay precise under pressure, and care deeply about the people on the other side of a product.",
     "During Covid, I discovered coffee — seriously. What started with a Breville Infuser became an accidental obsession with a semi-automatic like Decent DE1, where I learnt flow profiling, and now I venture into manual brewing with an Orea V4 and UFO brewer. I also have an Ikawa Pro, sourcing my own greens at regional coffee shows like Taiwan Coffee Show, working directly with producers, and collecting manual brew devices out of genuine curiosity about how and why each one extracts differently.",
     "I apply to Glyph because I want to pursue this craft properly, and because the standard here is one worth reaching for.",
   ],

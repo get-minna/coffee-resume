@@ -104,7 +104,7 @@ export const resumeData: ResumeData = {
     },
     {
       title: "Home Roasting",
-      body: "Roasting on Ikawa. Sources green beans from taiwan's top producers, experiments with profiles, tracks development time. Understands roast as a language, not just a process.",
+      body: "Roasting on Ikawa. Sources green beans from producers online or at tradeshows, experiments with profiles, tracks development time. Understands roast as a language, not just a process.",
     },
     {
       title: "Trade Fluency",

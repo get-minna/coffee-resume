@@ -18,6 +18,21 @@ pnpm build
 pnpm start
 ```
 
+For a local GitHub Pages preview:
+
+```bash
+GITHUB_PAGES=true pnpm build
+npx serve out
+```
+
+## Deploy to GitHub Pages
+
+Live URL: **https://get-minna.github.io/coffee-resume/**
+
+1. Push to `main` — the [deploy workflow](.github/workflows/deploy-pages.yml) runs automatically.
+2. In the repo: **Settings → Pages → Build and deployment → Source** → select **GitHub Actions** (one-time setup).
+3. Check the **Actions** tab for the deploy status.
+
 ## Deploy to production (Vercel)
 
 1. Push this repo to GitHub (`get-minna/coffee-resume`).

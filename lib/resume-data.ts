@@ -96,7 +96,7 @@ export const resumeData: ResumeData = {
   skills: [
     {
       title: "Espresso",
-      body: "Breville Infuser → Decent DE1 XL → Meticulous Home → Olympia Cremina Lever machine. Practice dialling in dose, brewing with pressure profiling, flow profiling, and blind tasting. Understands the variables, not just the recipe.",
+      body: "Breville Infuser → Decent DE1 XL → Meticulous Home → Olympia Cremina Lever machine. Practice dialling in dose, pressure profiling, flow profiling, and blind tasting. Understands the variables, not just the recipe.",
     },
     {
       title: "Manual Brew",

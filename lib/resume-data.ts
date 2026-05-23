@@ -177,6 +177,6 @@ export const resumeData: ResumeData = {
   ],
   footer: {
     applicationLine: "Front of House Application · Glyph Supply Co · Singapore",
-    attribution: "Stewart Huang · 2025",
+    attribution: "Stewart Huang · 2026",
   },
 }

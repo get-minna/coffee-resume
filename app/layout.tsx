@@ -21,7 +21,7 @@ const instrumentSerif = Instrument_Serif({
 })
 
 export const metadata: Metadata = {
-  title: "Stewart Huang — Glyph Supply Co",
+  title: "Stewart Huang — Minna Supply Co.",
   description: resumeData.meta.tagline.map(paragraphToPlainText).join(" "),
 }
 

@@ -48,7 +48,7 @@ export function ExportPdfButton() {
         heightLeft -= pageHeight
       }
 
-      pdf.save("stewart-huang-glyph-resume.pdf")
+      pdf.save("stewart-huang-minna-supply-co.pdf")
     } catch {
       window.print()
     } finally {

@@ -171,9 +171,9 @@ export const resumeData: ResumeData = {
     },
   ],
   community: [
-    { strong: "Grind & Shine Podcast", rest: "+ technical lead & videographer, agile content creator for SNCC 2026 – broadcasting this year's finals to the world" },
+    { strong: "Grind & Shine Podcast", rest: "+ tech lead, videographer, agile content creator for SNCC 2026 – broadcasting this year's finals to the world" },
     { strong: "SG Coffee Neighborhood", rest: "+ community cupping volunteer – making specialty coffee accessible to all" },
-    { strong: "Coffee Curator", rest: "+ curating the best of coffee from roasteries in Busan, Korea – sourcing & coffee distribution" },
+    { strong: "Coffee Curator", rest: "+ curating the best of coffee from roasteries in Busan, Korea – sourcing & coffee distribution to local cafes in SG" },
   ],
   footer: {
     applicationLine: "Front of House Team · Minna Supply · Singapore",

@@ -55,7 +55,7 @@ export interface ResumeData {
 
 export const resumeData: ResumeData = {
   meta: {
-    roleTag: "Front of House · Minna Supply",  
+    roleTag: "Front of House · Minna Supply",
     firstName: "Stewart",
     lastName: "Huang",
     tagline: [
@@ -122,25 +122,25 @@ export const resumeData: ResumeData = {
     {
       dates: "2026 – Present",
       type: " ",
-      title: "Product Engineer & Founder",
-      company: "Minna Loyalty · Regional",
+      title: "Head of Bar & Founder",
+      company: "Kizuna by Minna · Regional",
       description: [
-        "Building mobile-native loyalty and CRM software for independent cafes and F&B businesses. First in Asia to launch a digital loyalty card that lives on the customer's phone via Apple/Google Wallets — no app download required.",
-        "Secured pre-orders and a signed pilot with a Singapore cafe within the first month, and onboarding more cafes in Singapore and South Korea.",
-        "Deep firsthand understanding of what cafe operators need, how customers behave, and what keeps people coming back.",
+        "Building next-generation mobile specialty coffee cart focused on beans from local roasteries — signing partnerships with 3 local roasteries within 1 month of operation and deployed to 2 locations in Singapore, with plans to expand in Singapore and regionally.",
+        "Embedded in how the global specialty community communicates, builds audience, and earns credibility through growing the largest specialty coffee community in Singapore and being an appointed media partner for Specialty Coffee Association covering Singapore National Coffee Championship 2026.",
       ],
-      tags: ["Pilot signed", "Pre-orders secured", "Built for cafes, Asia First"],
+      tags: ["Specialty coffee world", "Trade relationships", "Global scene"],
     },
     {
       dates: "2026 – Present",
       type: " ",
-      title: "Instagram Strategy & Marketing Consultant",
-      company: "Minna SNS · Regional",
+      title: "Product Engineer & Founder",
+      company: "Minna OS · Regional",
       description: [
-        "Content strategy and growth work for prominent names in specialty coffee — Jay, creator of the UFO Brewer, and a notable Korean roastery cafe in Busan, Korea.",
-        "Embedded in how the global specialty community communicates, builds audience, and earns credibility.",
+        "Building next-generation omni-channel operating system for independent cafes and F&B businesses to help them thrive. First in Asia to launch a digital loyalty card that lives on the customer's phone via Apple/Google Wallets — no app download required.",
+        "Secured pre-orders and a signed pilot with a Singapore cafe within the first month, and onboarding more cafes in Singapore and South Korea.",
+        "Deep firsthand understanding of what cafe operators need, how customers behave, and what keeps people coming back.",
       ],
-      tags: ["Specialty coffee world", "Trade relationships", "Global scene"],
+      tags: ["Pilot signed", "Pre-orders secured", "Built for cafes, Asia First"],
     },
     {
       dates: "2020 – 2025",

@@ -8,7 +8,7 @@ interface CommunityPillsProps {
 export function CommunityPills({ community }: CommunityPillsProps) {
   return (
     <section>
-      <SectionLabel>Volunteering</SectionLabel>
+      <SectionLabel>Other Projects</SectionLabel>
       <div className="flex flex-wrap gap-2.5">
         {community.map((pill) => (
           <span
